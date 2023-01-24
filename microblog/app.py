@@ -2,9 +2,14 @@ import datetime
 from flask import Flask, render_template, request
 from pymongo import MongoClient
 import certifi
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+MONGO_CLIENT_URL = os.getenv('MONGO_CLIENT_URL')
 
 app = Flask(__name__)
-client = MongoClient("mongodb+srv://jake:<password>@migroblogapp.gkdptsi.mongodb.net/test",
+client = MongoClient(MONGO_CLIENT_URL,
                     tlsCAFile=certifi.where())
 app.db = client.microblog
 entries = []
