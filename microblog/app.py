@@ -7,7 +7,7 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 
 load_dotenv()
-MONGO_CLIENT_URL = os.getenv('MONGO_CLIENT_URL')
+MONGO_CLIENT_URL = os.getenv('MONGO_CLIENT_URI')
 
 def create_app():
     app = Flask(__name__)
