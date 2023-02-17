@@ -1,6 +1,8 @@
 flask
 pymongo[srv]
 certifi
+python-dotenv
+gunicorn
 
 # Version Notes
 #     certifi==2022.12.7
